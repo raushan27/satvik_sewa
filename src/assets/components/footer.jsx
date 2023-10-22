@@ -6,18 +6,16 @@ function Header() {
   return (
     <div>
       <div className="my-footer">
+        <img
+          style={{ height: "23px", margin: "10px" }}
+          className=""
+          src={logoName}
+          alt="App Name"
+        />
         <div className="developer-name">
           <p style={{ fontSize: "smaller" }}>
             Made By <strong>Team RSRS</strong>
           </p>
-        </div>
-        <div>
-          <img
-            style={{ height: "23px", margin: "10px" }}
-            className=""
-            src={logoName}
-            alt="App Name"
-          />
           <a href="https://github.com/raushan27/satvik_sewa">
             <img
               style={{ height: "22px", margin: "10px" }}

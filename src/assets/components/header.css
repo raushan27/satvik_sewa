@@ -1,12 +1,15 @@
 .my-header {
   height: auto;
-  width: auto;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #fff6ef;
+  margin-bottom: 0;
+  background-color: #ff6f00;
   border-radius: 0px 0px 20px 20px;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .logo {

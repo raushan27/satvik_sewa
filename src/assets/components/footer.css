@@ -1,13 +1,16 @@
 .my-footer {
   height: auto;
-  width: auto;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #fff6ef;
+  background-color: #ff6f00;
   border-radius: 20px 20px 0px 0px;
+  margin-top: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .developer-name {

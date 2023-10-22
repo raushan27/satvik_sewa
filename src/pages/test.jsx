@@ -6,7 +6,14 @@ import ocdQuestions from "../assets/illness/ocd.js";
 import schizophreniaQuestions from "../assets/illness/schizo.js";
 import depressionQuestions from "../assets/illness/depression.js";
 import anxietyQuestions from "../assets/illness/anxiety.js";
-import { anxiety_notes, bipolar_notes, depression_notes, ocd_notes, schizo_notes } from "../assets/illness_notes/illness_notes.js";
+import {
+  anxiety_notes,
+  bipolar_notes,
+  depression_notes,
+  ocd_notes,
+  schizo_notes,
+} from "../assets/illness_notes/illness_notes.js";
+import "./test.css";
 
 const allQuestions = [
   ...bipolarQuestions.slice(0, 4),
@@ -84,22 +91,36 @@ function Test() {
       (a, b) => b[1] - a[1]
     );
 
-    // make changes here: format it accordingly, .link is supposed to be a button
     if (sortedResponses[0][1] > sortedResponses[1][1] + sortedResponses[2][1]) {
-      switch(sortedResponses[0][0]){
+      let illness = sortedResponses[0][0];
+      let notes, link;
+      switch (illness) {
         case "Bipolar Disorder":
-          return `Based on your responses, there are chances of you having ${sortedResponses[0][0]}. \n ${bipolar_notes.text} \n ${bipolar_notes.link}`;
+          notes = bipolar_notes.text;
+          link = bipolar_notes.link;
+          break;
         case "Obsessive-Compulsive Disorder":
-          return `Based on your responses, there are chances of you having ${sortedResponses[0][0]}. \n ${ocd_notes.text} \n ${ocd_notes.link}`;
+          notes = ocd_notes.text;
+          link = ocd_notes.link;
+          break;
         case "Schizophrenia":
-          return `Based on your responses, there are chances of you having ${sortedResponses[0][0]}. \n ${schizo_notes.text} \n ${schizo_notes.link}`;
+          notes = schizo_notes.text;
+          link = schizo_notes.link;
+          break;
         case "Depression":
-          return `Based on your responses, there are chances of you having ${sortedResponses[0][0]}. \n ${depression_notes.text} \n ${depression_notes.link}`;
+          notes = depression_notes.text;
+          link = depression_notes.link;
+          break;
         default:
-          return `Based on your responses, there are chances of you having ${sortedResponses[0][0]}. \n ${anxiety_notes.text} \n ${anxiety_notes.link}`;
+          notes = anxiety_notes.text;
+          link = anxiety_notes.link;
       }
+      return { illness, notes, link };
     } else if (yesCount <= questionIndex / 5) {
-      return "Hey, it seems like you are perfectly healthy. Good going! Mental health is just as important as physical health.";
+      return {
+        message:
+          "Hey, it seems like you are perfectly healthy. Good going! Mental health is just as important as physical health.",
+      };
     } else {
       switch (sortedResponses[0][0]) {
         case "Bipolar Disorder":
@@ -130,7 +151,9 @@ function Test() {
         default:
           break;
       }
-      return "Please answer more questions to get a better diagnosis.";
+      return {
+        message: "Please answer more questions to get a better diagnosis.",
+      };
     }
   };
 
@@ -139,33 +162,65 @@ function Test() {
     console.log(illnessResponses.get(currentIllness));
   }, [illnessResponses, currentIllness]);
 
+  const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
+
   return (
     <div>
       <Header />
-      <div className="quiz">
-        {questionIndex < questions.length ? (
-          <div className="question" id="question-container">
-            <p>{questions[questionIndex].text}</p>
-            <ul>
-              {questions &&
-                questions.length > 0 &&
-                questions[questionIndex] &&
-                questions[questionIndex].answerOptions.map(
-                  (answerOption, index) => (
-                    <li key={index}>
-                      <button onClick={() => handleAnswer(answerOption)}>
+      <div className="quiz-container">
+        <div className="question-container">
+          {questionIndex < questions.length ? (
+            <div>
+              <div>
+                <span className="active-question-no">
+                  {addLeadingZero(questionIndex + 1)}
+                </span>
+              </div>
+              <h2>{questions[questionIndex].text}</h2>
+              <ul>
+                {questions &&
+                  questions.length > 0 &&
+                  questions[questionIndex] &&
+                  questions[questionIndex].answerOptions.map(
+                    (answerOption, index) => (
+                      <li
+                        key={index}
+                        onClick={() => handleAnswer(answerOption)}
+                      >
                         {answerOption.answerText}
-                      </button>
-                    </li>
-                  )
-                )}
-            </ul>
-          </div>
-        ) : (
-          <div className="result">
-            <p>{assessMentalHealth()}</p>
-          </div>
-        )}
+                      </li>
+                    )
+                  )}
+              </ul>
+            </div>
+          ) : (
+            <div className="result">
+              {(() => {
+                const result = assessMentalHealth();
+                if (result.message) {
+                  return <p>{result.message}</p>;
+                } else {
+                  return (
+                    <>
+                      <p>
+                        Based on your responses, there are chances of you having
+                        <strong> {result.illness}</strong>.
+                      </p>
+                      <p>{result.notes}</p>
+                      <a
+                        href={result.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <button>Read More</button>
+                      </a>
+                    </>
+                  );
+                }
+              })()}
+            </div>
+          )}
+        </div>
       </div>
       <Footer />
     </div>

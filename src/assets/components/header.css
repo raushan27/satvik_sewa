@@ -1,0 +1,45 @@
+.my-header {
+  height: auto;
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #fff6ef;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.logo {
+  height: 65px;
+  margin: 10px;
+}
+
+.logo-name {
+  height: 65px;
+  margin: 10px;
+}
+
+.github {
+  height: 55px;
+  margin: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .my-header {
+    height: 68px;
+  }
+
+  .logo {
+    height: 52px;
+    margin: 10px;
+  }
+
+  .github {
+    height: 52px;
+    margin: 10px;
+  }
+
+  .logo-name {
+    display: none;
+  }
+}

@@ -6,6 +6,7 @@ import ocdQuestions from "../assets/illness/ocd.js";
 import schizophreniaQuestions from "../assets/illness/schizo.js";
 import depressionQuestions from "../assets/illness/depression.js";
 import anxietyQuestions from "../assets/illness/anxiety.js";
+import { anxiety_notes, bipolar_notes, depression_notes, ocd_notes, schizo_notes } from "../assets/illness_notes/illness_notes.js";
 
 const allQuestions = [
   ...bipolarQuestions.slice(0, 4),
@@ -83,8 +84,20 @@ function Test() {
       (a, b) => b[1] - a[1]
     );
 
+    // make changes here: format it accordingly, .link is supposed to be a button
     if (sortedResponses[0][1] > sortedResponses[1][1] + sortedResponses[2][1]) {
-      return `Based on your responses, it seems you may have ${sortedResponses[0][0]}.`;
+      switch(sortedResponses[0][0]){
+        case "Bipolar Disorder":
+          return `Based on your responses, there are chances of you having ${sortedResponses[0][0]}. \n ${bipolar_notes.text} \n ${bipolar_notes.link}`;
+        case "Obsessive-Compulsive Disorder":
+          return `Based on your responses, there are chances of you having ${sortedResponses[0][0]}. \n ${ocd_notes.text} \n ${ocd_notes.link}`;
+        case "Schizophrenia":
+          return `Based on your responses, there are chances of you having ${sortedResponses[0][0]}. \n ${schizo_notes.text} \n ${schizo_notes.link}`;
+        case "Depression":
+          return `Based on your responses, there are chances of you having ${sortedResponses[0][0]}. \n ${depression_notes.text} \n ${depression_notes.link}`;
+        default:
+          return `Based on your responses, there are chances of you having ${sortedResponses[0][0]}. \n ${anxiety_notes.text} \n ${anxiety_notes.link}`;
+      }
     } else if (yesCount <= questionIndex / 5) {
       return "Hey, it seems like you are perfectly healthy. Good going! Mental health is just as important as physical health.";
     } else {

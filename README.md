@@ -1,8 +1,69 @@
-# React + Vite
+# Satvik - Sewa (Mental Health Diagnosis and Awareness Website)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application for mental health diagnosis and awareness, built with JavaScript, Node.js, React.js (using Vite), and Express.
 
-Currently, two official plugins are available:
+## Table of Contents
+- [Background](#background)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Contributing](#contributing)
+- [License](#license)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Background
+
+Mental health is a crucial aspect of our well-being. This project aims to provide a user-friendly platform for individuals to assess their mental health and gain awareness about possible mental health issues based on their input.
+
+## Installation
+
+Make sure you have Node.js installed on your system. If not, you can download it from [nodejs.org](https://nodejs.org/).
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/raushan27/satvik_sewa/
+Navigate to the project directory:
+
+    cd satvik_sewa
+Install dependencies:
+
+    npm install
+Usage
+To start the application, use the following commands:
+
+# Start the server
+    npm start
+
+# Start the React.js frontend (using Vite)
+    npm run preview
+
+## Features
+User-friendly interface for mental health assessment.
+Information and resources for various mental health conditions.
+Personalized recommendations based on user input.
+
+## Technologies
+JavaScript
+Node.js
+React.js
+Vite
+Express
+
+
+## Contributing
+We welcome contributions from the community. If you'd like to contribute to this project, feel free to submit a pull request.
+
+## License
+This project is open-source.
+
+## Contributors
+Thanks to all the wonderful people who have contributed to this project!
+
+<a href="https://github.com/raushan27/satvik_sewa/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=raushan27/satvik_sewa" />
+</a>
+
+
+
+

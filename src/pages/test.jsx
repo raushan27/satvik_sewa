@@ -165,7 +165,7 @@ function Test() {
   const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
 
   return (
-    <div>
+    <div className="wrapper">
       <Header />
       <div className="quiz-container">
         <div className="question-container">

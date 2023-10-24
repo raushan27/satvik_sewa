@@ -1,19 +1,12 @@
 import "./footer.css";
-import logoName from "../images/logo-name.png";
 import Github from "../images/github.gif";
 
 function Header() {
   return (
     <div>
       <div className="my-footer">
-        <img
-          style={{ height: "23px", margin: "10px" }}
-          className=""
-          src={logoName}
-          alt="App Name"
-        />
         <div className="developer-name">
-          <p style={{ fontSize: "smaller" }}>
+          <p >
             Made By <strong>Team RSRS</strong>
           </p>
           <a href="https://github.com/raushan27/satvik_sewa">

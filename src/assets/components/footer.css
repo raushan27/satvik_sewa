@@ -6,11 +6,12 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #ff6f00;
+  background-color: #2980b9   ;
   border-radius: 20px 20px 0px 0px;
   margin-top: auto;
   flex-grow: 0;
   flex-shrink: 0;
+  bottom: 0;
 }
 
 .developer-name {

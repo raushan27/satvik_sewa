@@ -1,8 +1,4 @@
-.app{
-  background-color: #f2f2f2;
-}
-
-.app{
+.app {
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -17,7 +13,7 @@
 }
 
 .mainpage {
-  background-color: #f2f2f2 ;
+  background-color: #d8d9da;
   border-radius: 10px;
   padding: 20px;
   margin-top: 20px;
@@ -29,19 +25,40 @@
 }
 
 .start {
-  background-color: #4caf50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 8px;
+  background: linear-gradient(#faca71, #fae571);
+  color: #1f1d25;
+  max-width: 20rem;
+  animation: pulse 2s infinite;
+}
+
+.start h2 {
+  text-transform: uppercase;
+  margin: 0.25rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .start:hover {
-  background-color: #45a049;
+  background: #edcd6e;
   cursor: pointer;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(250, 229, 113, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(250, 229, 113, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(250, 229, 113, 0);
+  }
 }
 
 .dialogue {
@@ -50,8 +67,9 @@
 }
 
 .note {
-  background-color: #FFF6EF;
-  color: #C6A84E;
+  background-color: #fff6ef;
+  color: #c6a84e;
   font-weight: bold;
   padding: 20px;
+  border-radius: 8px;
 }

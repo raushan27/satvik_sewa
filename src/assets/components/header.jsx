@@ -7,7 +7,7 @@ function Header() {
   return (
     <div>
       <div className="my-header">
-        <a href="https://satvik-sewa.netlify.app/">
+        <a href="https://satvik-sewa.vercel.app/">
           <img className="logo" src={Logo} alt="App Logo" />
         </a>
         <img className="logo-name" src={logoName} alt="App Name" />

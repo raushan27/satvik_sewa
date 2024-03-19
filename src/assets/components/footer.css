@@ -12,6 +12,7 @@
   flex-grow: 0;
   flex-shrink: 0;
   bottom: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .developer-name {

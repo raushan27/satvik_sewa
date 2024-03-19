@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import Header from "../assets/components/header.jsx";
 import Footer from "../assets/components/footer.jsx";
 import bipolarQuestions from "../assets/illness/bipolar.js";
@@ -6,7 +7,7 @@ import ocdQuestions from "../assets/illness/ocd.js";
 import schizophreniaQuestions from "../assets/illness/schizo.js";
 import depressionQuestions from "../assets/illness/depression.js";
 import anxietyQuestions from "../assets/illness/anxiety.js";
-import model_from_json from "keras.models"
+// import model_from_json from "keras.models"
 
 import {
   anxiety_notes,
@@ -33,13 +34,10 @@ function shuffle(array) {
 }
 
 function Test() {
-
-  const json_file = open("mentalHealth.json", "r")
-  model_json = json_file.requestIdleCallback()
-  json_file.close()
-  model = model_from_json(model_json)
-  
-
+  // const json_file = open("mentalHealth.json", "r")
+  // model_json = json_file.requestIdleCallback()
+  // json_file.close()
+  // model = model_from_json(model_json)
 
   const [questions, setQuestions] = useState([]);
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -70,14 +68,14 @@ function Test() {
     setQuestionIndex((prevIndex) => prevIndex + 1);
     const currentQuestion = questions[questionIndex];
 
-    try{
-      const pred = model.predict(answer)
-      const prediction_label = lables[pred.argmax()]
+    // try{
+    //   const pred = model.predict(answer)
+    //   const prediction_label = lables[pred.argmax()]
 
-      putText(prediction_label)
-    }catch(e){
-      console.log(e)
-    }
+    //   putText(prediction_label)
+    // }catch(e){
+    //   console.log(e)
+    // }
 
     let currentIllness = "";
     if (currentQuestion.key === 1) currentIllness = "Bipolar Disorder";
@@ -183,6 +181,11 @@ function Test() {
 
   const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
 
+  const navigate = useNavigate();
+  function plannerClicked() {
+    navigate("/info");
+  }
+
   return (
     <div className="wrapper">
       <Header />
@@ -233,6 +236,9 @@ function Test() {
                       >
                         <button>Read More</button>
                       </a>
+                      <button onClick={plannerClicked}>
+                        Take me to the Planner!
+                      </button>
                     </>
                   );
                 }

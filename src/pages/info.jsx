@@ -63,6 +63,7 @@ function Info() {
                 value={userDetails.gender}
                 onChange={handleInputChange}
                 className="input-field"
+                aria-label="gender"
               >
                 <option value="gender">Select Gender</option>
                 <option value="male">Male</option>

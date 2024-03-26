@@ -57,7 +57,7 @@ function Info() {
           body: "After you have a lunch, take a short break to relax and clear your mind. Best would be if you go to a short walk, if not alternative good idea can be to reflect journal, write down about your feelings and thoughts, good or bad doesn't matter, just write it! And drink water!!!"
         })
       }
-      else if(hours == '14' && minutes == '16'){
+      else if(hours == '19' && minutes == '00'){
         const notification = new Notification("Back Home or what?!", {
           body: "Ideally at this time, you should be out, enjoying with friends but not everyday is same I guess. At this time, try to engage in a calming activity like reading, listening to music, etc. Most important is to do digital detox, In general also, being away from social media or phone is good but this time around, try to stay away seriously and later prepare to sleep"
         })

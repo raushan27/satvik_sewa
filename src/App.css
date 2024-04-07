@@ -66,6 +66,13 @@
   border-radius: 10px;
 }
 
+.final-dialogue{
+  padding: 20px;
+  border-radius: 10px;
+  margin: 100px;
+  text-align: center;
+}
+
 .note {
   background-color: #fff6ef;
   color: #c6a84e;

@@ -2,19 +2,24 @@ import React, { useState } from "react";
 import Header from "../assets/components/header";
 import Footer from "../assets/components/footer.jsx";
 import "./info.css";
+import { useNavigate } from "react-router-dom";
 
 function Info() {
+
+  const navigate = useNavigate()
+
   const [userDetails, setUserDetails] = useState({
     name: "",
     age: "",
     working_hours: "",
     gender: "",
     sleeping_hours: "",
+    email: ""
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("User details received:", userDetails);
+    navigate("/finalpage")
   };
 
   const handleInputChange = (e) => {

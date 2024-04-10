@@ -19,7 +19,7 @@ function Info() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/finalpage")
+    navigate("/planner")
   };
 
   const handleInputChange = (e) => {

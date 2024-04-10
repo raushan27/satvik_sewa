@@ -5,6 +5,10 @@ import { Navigate, useNavigate } from "react-router-dom";
 function Planner() {
   const navigate = useNavigate();
 
+  function final(){
+    navigate("/finalpage")
+  }
+
   return (
     <div >
       <Header />
@@ -61,6 +65,7 @@ function Planner() {
         </div>
        </div>
       </div>
+      <button onClick={final} style={{marginLeft: "33%", width: "33%"}}>Take Me to Goodbye page!</button>
       <Footer />
     </div>
   );
